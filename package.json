@@ -1,19 +1,29 @@
 {
   "name": "stogen",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Simple CSF generator",
+  "repository": {
+    "url": "kirikirisu/stogen",
+    "type": "git"
+  },
   "main": "dist/main.js",
   "bin": {
     "stogen": "bin/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
     "check": "tsc --noEmit"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "csf"
+  ],
+  "author": "kirisawa",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.18.13",
     "@babel/parser": "^7.18.13",
