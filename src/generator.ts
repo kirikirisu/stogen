@@ -8,11 +8,14 @@ import { parse as docgenParser } from "react-docgen-typescript";
 import { fallbackValue, isInitialsUpperCase } from "./lib";
 
 const root = process.cwd();
-const absolutePath = path.resolve(root, `src/components/InputText/index.tsx`);
-const storyTemplatePath = path.resolve(root, "src/story-template.txt");
 
 export const generator = (inputPath: string) => {
-  console.log(inputPath);
+  const absolutePath = path.resolve(root, inputPath);
+  const storyTemplatePath = path.resolve(
+    __dirname,
+    "../src/story-template.txt"
+  );
+
   try {
     // use docgen to get prop type and set default value
     const doc = docgenParser(absolutePath, {
@@ -102,10 +105,8 @@ export const generator = (inputPath: string) => {
         // valueがundefinedのやつは消される
         .replace(/slot-2/g, JSON.stringify(argList[key], null, 4));
 
-      const writingStoryPath = path.resolve(
-        root,
-        `src/components/${key}.stories.tsx`
-      );
+      const writingStoryPath =
+        absolutePath.split("/").slice(0, -1).join("/") + `/${key}.stories.tsx`;
 
       fs.writeFileSync(writingStoryPath, story);
     });

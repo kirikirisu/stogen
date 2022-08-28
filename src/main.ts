@@ -5,11 +5,10 @@ const cli = cac();
 cli
   .command(
     "generate <path>",
-    "Generate story. \n  plz enter the relative path up to component file."
+    "Generate CSF. \n  plz enter the relative path up to component file."
   )
   .action((path) => {
-    console.log("option", path);
-    // generator(path);
+    generator(path);
   });
 
 cli.help();
