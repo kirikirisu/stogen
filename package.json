@@ -1,16 +1,15 @@
 {
   "name": "stogen",
   "version": "1.0.0",
-  "description": "simple story generator",
+  "description": "Simple CSF generator",
   "main": "dist/main.js",
   "bin": {
     "stogen": "bin/index.js"
   },
   "scripts": {
-    "dev": "node dist/main.js",
-    "check": "tsc --noEmit",
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
