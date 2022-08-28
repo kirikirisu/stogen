@@ -1,0 +1,10 @@
+import { slot-1 } from ".";
+import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
+
+export default {
+  component: slot-1,
+} as ComponentMeta<typeof slot-1>;
+
+export const Default: ComponentStoryObj<typeof slot-1> = {
+  args: slot-2,
+};
